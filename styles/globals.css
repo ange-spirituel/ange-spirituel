@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Typographie douce et harmonieuse */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Georgia', serif;
+  line-height: 1.6;
+  color: #fff;
+  background: url('/celestial.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: brightness(1.2) blur(0.5px);
+}
+
+/* Contenu centré */
+.main {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Champs de texte */
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+/* Boutons roses angéliques */
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ffe9ec;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ffd7e3;
+}
+
+/* Bloc réponse spirituelle */
+.response {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  backdrop-filter: blur(2px);
+}
+
+/* Font pour signature */
+.font-signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.9;
+}
+
+/* Animation fade-in */
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bg-angel {
+  background: url('/images/celestial.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: brightness(1.2) blur(0.5px);
+}
