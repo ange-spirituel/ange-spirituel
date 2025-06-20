@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           {/* Signature */}
-          <div className="text-center mt-8 text-yellow-100 font-signature text-xl animate-fade-in">
+          <div className="text-center mt-8 text-yellow-100 font-signature text-">
     Oriane OYONO -
      
     Paix et bénédictions sur toi, que la lumière t’accompagne toujours ✨
