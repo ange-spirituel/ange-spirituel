@@ -1,0 +1,6 @@
+Starting...
+ ✓ Ready in 8.9s
+ ○ Compiling /about ...
+ ✓ Compiled /about in 8.4s (408 modules)
+ GET /about 200 in 10862ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: RangeError: Array buffer allocation failed
