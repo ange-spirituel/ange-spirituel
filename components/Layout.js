@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-pink-100 via-white to-blue-100 text-gray-900 font-serif">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-pink-100 via-white to-blue-100 font-serif">
       <header className="bg-white bg-opacity-70 shadow-md py-4">
         <nav className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 px-4 text-center">
           <h1 className="text-2xl font-bold text-pink-700 drop-shadow-md">👼 Ange Répond</h1>
