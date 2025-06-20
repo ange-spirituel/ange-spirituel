@@ -53,7 +53,7 @@ export default function Home() {
             Avant de poser ta question, respire profondément. 
             Adresse-toi à Dieu, ton ange gardien, à ton guide spirituel ou à l’univers.
             <br /><br />
-            Lorsque tu poses une question à ton Ange, pose-la avec foi, amour et confiance.
+            Lorsque tu poses une question à l'Ange, pose-la avec foi, amour et confiance.
             <br />
             <strong className="block mt-4 animate-pulse">1 € = 7 questions</strong>
           </p>
