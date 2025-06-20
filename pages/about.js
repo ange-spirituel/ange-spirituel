@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { supabase } from '../components/lib/supabase';
+import { supabase } from '../lib/supabase';
 
 export default function AboutPage() {
   const [comments, setComments] = useState([]);
