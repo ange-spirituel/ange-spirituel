@@ -28,6 +28,7 @@ textarea {
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-top: 15px;
+  color: #111;
 }
 
 /* Boutons roses angéliques */
@@ -37,6 +38,7 @@ button {
   border: none;
   border-radius: 25px;
   background: #ffe9ec;
+  color: #333;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -50,7 +52,7 @@ button:hover {
 .response {
   margin-top: 30px;
   font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -75,8 +77,38 @@ button:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.bg-angel {
-  background: url('/images/celestial.jpg') no-repeat center center fixed;
+
+/* Fond étoilé */
+.with-background {
+  background-image: url('/stars.gif');
   background-size: cover;
-  backdrop-filter: brightness(1.2) blur(0.5px);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Fond clair */
+.no-background {
+  background: white !important;
+  color: #111 !important;
+  min-height: 100vh;
+}
+
+/* Forcer texte foncé dans les pages sans fond */
+.no-background *,
+.no-background p,
+.no-background h1,
+.no-background h2,
+.no-background h3,
+.no-background blockquote {
+  color: #111 !important;
+}
+
+/* Optionnel : voile sur fond étoilé pour lisibilité */
+.with-background::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
