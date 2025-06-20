@@ -18,7 +18,7 @@ export default function APropos() {
 
       <p className="text-gray-600">
         Vous avez droit à une question gratuite. Chaque réponse est donnée avec douceur et lumière.  
-        Ensuite, pour continuer, vous pouvez faire un don ou débloquer un pack de 6 questions pour 1 €.
+        Ensuite, pour continuer, vous pouvez faire un don ou débloquer un pack de 7 questions pour 1 €.
       </p>
 
       <div className="flex justify-center gap-4 mt-6">
