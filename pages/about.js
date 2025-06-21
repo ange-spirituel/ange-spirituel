@@ -109,15 +109,6 @@ export default function AboutPage() {
             <br />
             Que la paix et les bénédictions t’accompagnent sur ton chemin 🙏
           </p>
-<<<<<<< HEAD
-
-          <div className="text-center mt-4">
-            <Link href="/temoignages" className="text-pink-300 hover:underline">
-              Voir les témoignages
-            </Link>
-          </div>
-=======
->>>>>>> f203289eb13f1a827102937a2b69365cb55c2a45
         </div>
       </main>
 
