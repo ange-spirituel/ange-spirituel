@@ -10,6 +10,7 @@ export default function AboutPage() {
   const [newComment, setNewComment] = useState('');
   const [loading, setLoading] = useState(false);
 
+  /* 🔄 Récupération des commentaires */
   useEffect(() => {
     const fetchComments = async () => {
       const { data, error } = await supabase
@@ -18,25 +19,27 @@ export default function AboutPage() {
         .order('created_at', { ascending: false });
 
       if (!error) setComments(data);
+      else console.error('Erreur Supabase :', error);
     };
     fetchComments();
   }, []);
 
+  /* ➕ Ajout d’un commentaire */
   const handleAddComment = async () => {
-    if (newComment.trim()) {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from('comments')
-        .insert([{ content: newComment }]); // 🔁 Remplacé 'text' par 'content'
+    if (!newComment.trim()) return;
 
-      if (!error) {
-        setComments([data[0], ...comments]);
-        setNewComment('');
-      } else {
-        console.error('Erreur lors de l’envoi du commentaire:', error);
-      }
-      setLoading(false);
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('comments')
+      .insert([{ content: newComment }]); // ← la colonne “content”
+
+    if (!error) {
+      setComments([data[0], ...comments]);
+      setNewComment('');
+    } else {
+      console.error('Erreur lors de l’envoi du commentaire :', error);
     }
+    setLoading(false);
   };
 
   return (
@@ -49,36 +52,42 @@ export default function AboutPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg p-6">
+
+          {/* ── Introduction ─────────────────────────── */}
           <h1 className="text-3xl font-bold text-pink-200 mb-4 text-center">
             🌟 À propos de ce site
           </h1>
 
-          <p className="mb-4 leading-relaxed text-white">
-            Ce site a été créé avec amour et foi pour offrir un espace de paix, de guidance et de connexion spirituelle.
-            Il invite chacun à se recentrer, à se connecter à ses guides, à Dieu, à la Source, L'Univers ou à son Ange gardien.
+          <p className="mb-4 leading-relaxed">
+            Ce site a été créé avec amour et foi pour offrir un espace de paix, de guidance et de
+            connexion spirituelle. Il invite chacun à se recentrer, à se connecter à ses guides,
+            à Dieu, à la Source, l’Univers ou à son Ange gardien.
           </p>
 
           <blockquote className="italic text-blue-100 border-l-4 border-blue-300 pl-4 my-4">
-            « Demandez, et l’on vous donnera ; cherchez, et vous trouverez ; frappez, et l’on vous ouvrira. »
-            <br /> — Matthieu 7:7
+            « Demandez, et l’on vous donnera ; cherchez, et vous trouverez ; frappez, et l’on vous
+            ouvrira. » <br />— Matthieu&nbsp;7 : 7
           </blockquote>
 
-          <p className="text-white mb-8">
-            Chaque réponse est transmise avec amour, douceur et lumière.
-            puis un pack de 7 questions est disponible pour 1 € symbolique.
+          <p className="mb-8">
+            Chaque réponse est transmise avec amour, douceur et lumière. Après la première question
+            gratuite, un pack de&nbsp;7 questions est disponible pour 1 € symbolique.
           </p>
 
-          {/* SECTION COMMENTAIRES */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow text-white mb-6">
+          {/* ── Témoignages ─────────────────────────── */}
+          <div className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow mb-6">
             <h2 className="text-lg font-semibold text-pink-100 mb-3">💬 Témoignages anonymes</h2>
 
-            <div className="space-y-3 max-h-60 overflow-y-auto mb-4">
+            <div className="space-y-3 max-h-60 overflow-y-auto mb-4 pr-2">
               {comments.length === 0 ? (
                 <p className="text-gray-200">Aucun commentaire pour le moment.</p>
               ) : (
-                comments.map((c, idx) => (
-                  <div key={idx} className="bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded text-sm">
-
+                comments.map((c) => (
+                  <div
+                    key={c.id}
+                    className="bg-white bg-opacity-20 backdrop-blur-sm p-3 rounded text-sm"
+                  >
+                    <p className="whitespace-pre-wrap">{c.content}</p>
                     <p className="text-right text-xs text-gray-200 mt-1">
                       {new Date(c.created_at).toLocaleString('fr-FR')}
                     </p>
@@ -98,14 +107,15 @@ export default function AboutPage() {
             <button
               onClick={handleAddComment}
               disabled={loading}
-              className="px-4 py-2 mt-2 bg-pink-500 text-white rounded hover:bg-pink-600 transition"
+              className="w-full py-2 mt-2 bg-pink-500 text-white rounded hover:bg-pink-600 transition"
             >
-              {loading ? 'Envoi en cours...' : 'Partager'}
+              {loading ? 'Envoi en cours…' : 'Partager'}
             </button>
           </div>
 
-          <p className="mt-6 text-sm text-white italic text-center">
-            Avec tout mon amour, <strong>Oriane OYONO</strong> 🌸  
+          {/* ── Signature ─────────────────────────── */}
+          <p className="mt-6 text-sm italic text-center">
+            Avec tout mon amour, <strong>Oriane OYONO</strong> 🌸
             <br />
             Que la paix et les bénédictions t’accompagnent sur ton chemin 🙏
           </p>
