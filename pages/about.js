@@ -68,8 +68,8 @@ export default function AboutPage() {
           </blockquote>
 
           <p className="mb-8">
-            Chaque réponse est transmise avec amour, douceur et lumière. Après la première question gratuite,
-            un pack de 7 questions est disponible pour 1 € symbolique.
+            Chaque réponse est transmise avec amour, douceur et lumière.
+            Un pack de 7 questions est disponible pour 1 € symbolique.
           </p>
 
           {/* ─── Témoignages ─────────────────────────────── */}
