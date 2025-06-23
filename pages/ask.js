@@ -99,7 +99,7 @@ export default function AskPage() {
       <Header />
 
       <main className="p-4 max-w-xl mx-auto text-white">
-        <h1 className="text-2xl font-bold text-center mb-4">👼 Pose ta question à ton Ange</h1>
+        <h1 className="text-2xl font-bold text-center mb-4">👼 Pose ta question à l'Ange</h1>
         <p className="text-sm text-center mb-2">Respire profondément. Adresse-toi à Dieu, l'Univers,la Source, ton Ange Gardien ou à ton Guide Spirituel,
           poses la question à haute/bas voix ou dans ton coeur, ensuite, écris ta question.</p>
 
